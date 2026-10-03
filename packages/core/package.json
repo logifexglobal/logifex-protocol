@@ -1,6 +1,6 @@
 {
   "name": "@logifex-protocol/core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Logifex Protocol Core — Contract, Event, EventBus, Handler, Lifecycle. Zero runtime dependencies.",
   "type": "module",
   "main": "./dist/index.js",
@@ -23,5 +23,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "license": "MIT"
+  "keywords": [
+    "logifex",
+    "logifex-protocol",
+    "event-driven",
+    "contract",
+    "typescript"
+  ]
 }

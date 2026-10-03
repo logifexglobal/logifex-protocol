@@ -1,23 +1,40 @@
 {
   "name": "@logifex-protocol/plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Logifex Protocol plugin manifest schema, parser, validator and Core compatibility check.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
     "./schema": "./schema/plugin.schema.json"
   },
-  "files": ["dist", "schema"],
-  "scripts": { "build": "tsc -p tsconfig.build.json" },
+  "files": [
+    "dist",
+    "schema"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json"
+  },
   "dependencies": {
     "semver": "^7.6.0"
   },
   "devDependencies": {
-    "typescript": "^5.6.0",
-    "@types/semver": "^7.5.8"
+    "@types/semver": "^7.5.8",
+    "typescript": "^5.6.0"
   },
-  "publishConfig": { "access": "public" },
-  "license": "MIT"
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "keywords": [
+    "logifex",
+    "logifex-protocol",
+    "plugin",
+    "manifest",
+    "typescript"
+  ]
 }

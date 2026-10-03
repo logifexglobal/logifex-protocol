@@ -1,6 +1,6 @@
 {
   "name": "@logifex-protocol/invariant",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Logifex Protocol Invariant registry — declaration, enforcement status, and governed status changes. Independent of @logifex-protocol/core.",
   "type": "module",
   "main": "./dist/index.js",
@@ -23,5 +23,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "license": "MIT"
+  "keywords": [
+    "logifex",
+    "logifex-protocol",
+    "invariant",
+    "governance",
+    "typescript"
+  ]
 }
