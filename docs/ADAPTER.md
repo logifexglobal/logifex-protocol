@@ -129,9 +129,9 @@ adapters (one that throws, one that leaks a provider's status names, one
 that ignores the idempotency key) and must reject each.
 
 In Invariant terms, "Contract-facing Adapter methods must not throw" is
-`validated` for `PayoutProvider` — verified by tests, but not blocked at
-build time and not guarded at runtime. Promoting it to `enforced` means
-running the suite in CI for every provider package. The suite belongs
-with each Contract, not in Logifex Protocol, because the Protocol
-defines no Contracts of its own. A reusable harness is worth extracting
-only when a second Contract with several Adapters needs one.
+`enforced` for `PayoutProvider`: the conformance suite runs in CI on
+every push and pull request, so a violating adapter cannot merge. The
+suite belongs with each Contract, not in Logifex Protocol, because the
+Protocol defines no Contracts of its own. A reusable harness is worth
+extracting only when a second Contract with several Adapters needs
+one.

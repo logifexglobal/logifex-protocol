@@ -1,5 +1,7 @@
 # Logifex Protocol
 
+[![CI](https://github.com/logifexglobal/logifex-protocol/actions/workflows/ci.yml/badge.svg)](https://github.com/logifexglobal/logifex-protocol/actions/workflows/ci.yml)
+
 > **Pre-stable.** Everything in this repo is `0.x`. Breaking changes are
 > expected. **Do not use in production.** This is for learning and
 > experimentation until a `1.0.0` release.
