@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://logifex-protocol.dev/schema/plugin.schema.json",
+  "title": "Logifex Protocol Plugin Manifest",
+  "description": "Declarative manifest for a Logifex Protocol plugin (plugin.json). Shipped for editor/IDE tooling; @logifex-protocol/plugin's validator enforces the same rules in TypeScript, so this file need not be executed at validation time.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["name", "version", "type", "description", "license", "logifex", "permissions", "provides", "extensionPoints", "entry"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^(@[a-z0-9-]+/)?[a-z0-9]([a-z0-9-]*[a-z0-9])?$",
+      "description": "An npm-style package name, optionally scoped."
+    },
+    "version": {
+      "type": "string",
+      "description": "A valid semver version, e.g. 1.0.0."
+    },
+    "type": {
+      "const": "plugin",
+      "description": "Fixed. A Theme or Template manifest is a different shape with its own schema, not a variant of this one."
+    },
+    "category": {
+      "type": "string",
+      "description": "Ecosystem taxonomy, not protocol correctness. Optional."
+    },
+    "description": { "type": "string", "minLength": 1 },
+    "author": { "type": "string" },
+    "repository": { "type": "string" },
+    "license": { "type": "string", "minLength": 1 },
+    "logifex": {
+      "type": "object",
+      "required": ["core"],
+      "properties": {
+        "core": {
+          "type": "string",
+          "description": "A semver range this plugin is compatible with, e.g. ^0.2.0."
+        }
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "description": "Capabilities this plugin needs. Declared, not runtime-enforced in v1.",
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)+$" }
+    },
+    "provides": {
+      "type": "array",
+      "description": "Capabilities this plugin offers. Not yet a Capability Contract (no guarantees attached) — just an advertised name.",
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)+$" }
+    },
+    "extensionPoints": {
+      "type": "array",
+      "description": "Named points in Core/host app this plugin attaches to. Required; an empty array means a standalone/general-purpose plugin. A missing field is invalid — ambiguity here would weaken the one mechanically-verifiable boundary this field exists to provide.",
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)+$" }
+    },
+    "usesAI": { "type": "boolean" },
+    "entry": {
+      "type": "string",
+      "pattern": "^\\./.+\\.(js|mjs|cjs)$",
+      "description": "Relative path to the compiled entry point."
+    }
+  }
+}
