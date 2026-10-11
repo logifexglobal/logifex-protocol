@@ -1,0 +1,17 @@
+{
+  "name": "@logifex-protocol/plugin",
+  "version": "0.1.2",
+  "type": "plugin",
+  "description": "Logifex Protocol plugin manifest schema, parser, validator and Core compatibility check.",
+  "license": "MIT",
+  "logifex": {
+    "core": "^0.2.0"
+  },
+  "permissions": [],
+  "provides": [
+    "plugin.manifest.validate",
+    "plugin.compatibility.check"
+  ],
+  "extensionPoints": [],
+  "entry": "./dist/index.js"
+}

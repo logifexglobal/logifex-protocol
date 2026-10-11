@@ -1,6 +1,6 @@
 {
   "name": "@logifex-protocol/plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Logifex Protocol plugin manifest schema, parser, validator and Core compatibility check.",
   "type": "module",
   "main": "./dist/index.js",
@@ -14,7 +14,8 @@
   },
   "files": [
     "dist",
-    "schema"
+    "schema",
+    "plugin.json"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json"
@@ -23,6 +24,7 @@
     "semver": "^7.6.0"
   },
   "devDependencies": {
+    "@types/node": "^26.6.5",
     "@types/semver": "^7.5.8",
     "typescript": "^5.6.0"
   },
@@ -36,5 +38,11 @@
     "plugin",
     "manifest",
     "typescript"
-  ]
+  ],
+  "bin": {
+    "logifex-plugin": "./dist/bin.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }
